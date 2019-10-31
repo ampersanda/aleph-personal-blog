@@ -1,7 +1,7 @@
-{:site-title           "Ampersanda's blog"
+{:site-title           "Mochamad Lucky Pradana in Aleph"
  :author               "Mochamad Lucky Pradana"
- :description          "My blog is awesome. Don't doubt it."
- :site-url             "https://ampersanda.dev/"
+ :description          "My blog is awesome. Don't doubt it. hehe"
+ :site-url             "https://aleph.ampersanda.dev/"
  :post-root            "posts"
  :page-root            "pages"
  :post-root-uri        "posts-output"
@@ -21,8 +21,8 @@
  :theme                "simple-amp"
  :resources            ["img"]
  :keep-files           [".git"]
- :disqus?              true
- :disqus-shortname     "ampersanda-blog"
+ :disqus?              false
+ :disqus-shortname     ""
  :ignored-files        [#"\.#.*" #".*\.swp$"]
  :previews?            false
  :posts-per-page       8

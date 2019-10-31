@@ -11,12 +11,6 @@
             <small>{{post.author}} <span class="color--normal">&nbsp;&nbsp;×&nbsp;&nbsp;</span> {{post.date|date:longDate}}</small>
         </p>
         {% endif %}
-
-        {% if disqus? %}
-        <div class="comments editor">
-            <a href="{{post.uri}}#disqus_thread">View Comments</a>
-        </div>
-        {% endif %}
     </div>
 
     <hr>
