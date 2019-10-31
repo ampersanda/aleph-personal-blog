@@ -1,0 +1,29 @@
+@import 'variables';
+@import 'media';
+
+.post {
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &-header {
+    &__title {
+      padding: 16px 24px;
+      color: #353535;
+
+      .xs({
+        padding: 16px 0 8px;
+        line-height: 1.4em;
+        font-size: 1.25rem;
+      });
+
+      &::before {
+        content: ">_ ";
+        color: #C8CACA;
+      }
+    }
+  }
+}

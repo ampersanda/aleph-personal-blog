@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>{{title}}{% block subtitle %}{% endblock %}</title>
+    <link rel="canonical" href="{{site-url}}{{uri}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.css">
+    {% style "css/style.css" %}
+
+    <script src="//instant.page/3.0.0" type="module" defer
+            integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+</head>
+<body data-instant-intensity="viewport">
+<main>
+    <div class="container">
+        <header class="editor">
+            <h1 style="margin-bottom: 0"><a href="/" class="link link--none">Ampersanda</a></h1>
+
+            <div class="headline">
+                <p class="no--margin">
+                    <small>Front End Developer and Clojure Enthusiast
+                        <span>
+                            <a href="{{archives-uri}}">/archives</a>
+                            <!--                        {% for nav-page in navbar-pages %}<a href="{{nav-page.uri}}" style="text-transform: lowercase">/{{nav-page.title}}</a>{% endfor %}-->
+                            <a href="https://twitter.com/ampersanda">/twitter</a>
+                            <a href="https://www.linkedin.com/in/ampersanda/">/linked-in</a>
+                        <a href="{{rss-uri}}">/rss</a>
+                        </span>
+                    </small>
+                </p>
+            </div>
+        </header>
+        <div class="wrapper">
+            {% block content %}
+            {% endblock %}
+            <br>
+
+            {% if latest-posts|not-empty %}
+            <div class="recent editor">
+                <h3>Recent Posts</h3>
+                <ul>
+                    {% for post in latest-posts %}
+                    <li><a href="{{post.uri}}">{{post.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br>
+            {% endif %}
+
+            <!--            {% if sidebar-pages|not-empty %}-->
+            <!--            <div class="links editor">-->
+            <!--                <h3>Links</h3>-->
+            <!--                <ul class="links editor">-->
+            <!--                    {% for page in sidebar-pages %}-->
+            <!--                    <li><a href="{{page.uri}}">{{page.title}}</a></li>-->
+            <!--                    {% endfor %}-->
+            <!--                </ul>-->
+            <!--            </div>-->
+            <!--            {% endif %}-->
+
+            <!--            {% if tags|not-empty %}-->
+            <!--            <div class="tags editor">-->
+            <!--                <h3>Tags</h3>-->
+            <!--                {% for tag in tags %}-->
+            <!--                <span><a href="{{tag.uri}}">{{tag.name}}</a></span> {% if forloop.last %} {% else %} - {% endif %}-->
+            <!--                {% endfor %}-->
+            <!--            </div>-->
+            <!--            <br>-->
+            <!--            {% endif %}-->
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="wrapper editor">
+            <hr>
+            <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a> - Copyright &copy;
+                {{today|date:yyyy}} {{author}}</p>
+        </div>
+    </div>
+</footer>
+{% script "js/highlight.pack.js" %}
+<script>hljs.initHighlightingOnLoad();</script>
+{% if post.klipse %} {{post.klipse|safe}} {% endif %}
+{% if page.klipse %} {{page.klipse|safe}} {% endif %}
+</body>
+</html>

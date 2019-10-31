@@ -1,0 +1,17 @@
+{% extends "/html/base.html" %}
+{% block content %}
+<div class="post">
+    {% include "/html/post-content.html" %}
+
+    <div class="prev-next editor">
+        {% if post.next %}
+        Next Post :
+        <a href="{{post.next.uri}}">{{post.next.title}}</a> <br>
+        {% endif %}
+        {% if post.prev %}
+        Previous Post :
+        <a href="{{post.prev.uri}}">{{post.prev.title}}</a> <br>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

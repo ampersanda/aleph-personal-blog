@@ -1,0 +1,23 @@
+{% extends "/html/base.html" %}
+{%block subtitle %}: {{page.title}}{% endblock %}
+{% block content %}
+<div class="custom-page">
+    <div class="page-header editor">
+        <h1><span class="color--light">>_&nbsp;</span> {{page.title}}</h1>
+    </div>
+    {% if page.toc %}{{page.toc|safe}}{% endif %}
+    {{page.content|safe}}
+
+    <div class="editor">
+        {% if page.prev %}
+        <a href="{{page.prev.uri}}">&laquo; {{page.prev.title}}</a>
+        {% endif %}
+        {% if all page.prev page.next %}
+        ||
+        {% endif %}
+        {% if page.next %}
+        <a href="{{page.next.uri}}">{{page.next.title}} &raquo;</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

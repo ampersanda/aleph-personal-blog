@@ -1,0 +1,95 @@
+@import 'media';
+@import 'variables';
+
+.container {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 8%;
+
+  .xxs({
+    padding: 0 16px;
+  });
+}
+
+.editor {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto Mono', 'Courier', 'Helvetica', sans-serif;
+  color: #4B4B4B;
+  font-size: 1rem;
+  line-height: 1.6;
+
+  .no--margin {
+    margin: 0;
+  }
+
+  p {
+    margin: 1.6em 0;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  h2 {
+    &::before {
+      content: "# ";
+      color: #C8CACA;
+    }
+  }
+
+  .xs({
+    font-size: 0.875rem;
+  });
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    background-color: #F2E39B;
+    padding: 0.0625em 0.4em;
+
+    &:focus, &:hover {
+      background-color: #F2E39B - #111;
+    }
+  }
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    padding: 0;
+    width: 160px;
+    margin: 3em auto;
+  }
+
+  blockquote {
+    color: #888;
+    margin: 2.4em 1em;
+
+    strong, b {
+      color: #444;
+    }
+  }
+
+  code {
+    line-height: 1.4;
+    padding: 1em;
+    font-family: 'Roboto Mono', 'Courier', 'Helvetica', sans-serif;
+    font-size: 0.875em;
+
+    &:not(.hljs) {
+      font-size: 1em;
+      background-color: #ffd5d5;
+      padding: 0.0625em 0.4em;
+    }
+  }
+}
+
+.disqus_thread {
+  margin-top: 32px;
+}

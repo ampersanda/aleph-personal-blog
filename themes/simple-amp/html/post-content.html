@@ -1,0 +1,23 @@
+<div class="post-header">
+    <h2 class="post-header__title">{{post.title}}</h2>
+</div>
+<div class="editor">
+    {% if post.toc %}{{post.toc|safe}}{% endif %}
+    {{post.content|safe}}
+
+    <div class="post-content">
+        {% if post.author %}
+        <p class="color--light text--uppercase">
+            <small>{{post.author}} <span class="color--normal">&nbsp;&nbsp;×&nbsp;&nbsp;</span> {{post.date|date:longDate}}</small>
+        </p>
+        {% endif %}
+
+        {% if disqus? %}
+        <div class="comments editor">
+            <a href="{{post.uri}}#disqus_thread">View Comments</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <hr>
+</div>

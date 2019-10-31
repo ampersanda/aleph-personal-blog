@@ -1,0 +1,55 @@
+@lg: 1200px;
+@md: 992px;
+@sm: 768px;
+@max-xs: 767px;
+@max-xxs: 480px;
+
+.lg(@rules) {
+  @media screen and (min-width: @lg) { @rules();
+  }
+}
+
+.md(@rules) {
+  @media screen and (min-width: @md) { @rules();
+  }
+}
+
+.sm(@rules) {
+  @media screen and (min-width: @sm) { @rules();
+  }
+}
+
+.xs(@rules) {
+  @media screen and (max-width: @max-xs) { @rules();
+  }
+}
+
+.xxs(@rules) {
+  @media screen and (max-width: @max-xxs) { @rules();
+  }
+}
+
+//.print(@rules) {
+//  @media print { @rules();
+//  }
+//}
+//
+////noinspection CssInvalidMediaFeature
+//.touchscreen(@rules) {
+//  @media screen and (pointer: coarse) {
+//    @rules();
+//  }
+//}
+//
+////noinspection CssInvalidMediaFeature
+//.mouse(@rules) {
+//  @media screen and (pointer: fine) {
+//    @rules();
+//  }
+//}
+//
+//.retina(@rules) {
+//  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min@moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+//    @rules();
+//  }
+//}
